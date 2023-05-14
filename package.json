@@ -1,0 +1,28 @@
+{
+  "name": "stock-market-bot",
+  "version": "1.0.0",
+  "description": "a simple stock market bot to monitor stocks",
+  "main": "./.dist/bot.js",
+  "repository": "https://github.com/asuka-405/Stock-Market-Bot.git",
+  "author": "Suryansh Kapil <suryanshkapil405@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tsc && cp ./package.json ./.dist/",
+    "deploy": "yarn install && node ./bot.js",
+    "dev": "ts-node ./bot.ts",
+    "boturl": "node ____geturl.js"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "discord.js": "^14.11.0",
+    "mongoose": "^7.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.1.4",
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
