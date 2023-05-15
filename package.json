@@ -8,8 +8,11 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "tsc && cp ./package.json ./.dist/",
+    "cloneprod": "git clone https://github.com/asuka-405/stock-market-bot-prod.git",
+    "copyconfig": " cp ./package.json ./stock-market-bot-prod/ && cp ./.env ./stock-market-bot-prod/ && cp ./.gitignore ./stock-market-bot-prod/",
+    "build": "yarn cloneprod && tsc && yarn copyconfig",
     "deploy": "yarn install && node ./bot.js",
+    "dockerize": "yarn build && docker build -t asuka/stockmarketbot . && docker run -d asuka/stockmarketbot",
     "dev": "ts-node ./bot.ts",
     "boturl": "node ____geturl.js"
   },
