@@ -11,7 +11,7 @@
     "cloneprod": "git clone https://github.com/asuka-405/stock-market-bot-prod.git",
     "copyconfig": " cp ./package.json ./stock-market-bot-prod/ && cp ./.env ./stock-market-bot-prod/ && cp ./.gitignore ./stock-market-bot-prod/",
     "build": "yarn cloneprod && tsc && yarn copyconfig",
-    "deploy": "yarn install && node ./bot.js",
+    "deploy": "yarn install",
     "dockerize": "yarn build && docker build -t asuka/stockmarketbot . && docker run -d asuka/stockmarketbot",
     "dev": "ts-node ./bot.ts",
     "boturl": "node ____geturl.js"
